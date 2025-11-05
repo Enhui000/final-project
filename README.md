@@ -9,6 +9,12 @@ For detailed project information, please refer to our [Project Proposal](./CS407
 
 ---
 
+## Android 客户端原型
+
+仓库新增的 [`android-app`](./android-app) 目录包含使用 **Kotlin / Jetpack Compose** 编写的原型移动端界面，实现了注册 / 登录、校园地图、聊天和设置页面的占位版本，方便 Android 端同学独立迭代。导入 Android Studio 后即可在模拟器或真机上运行，详细说明见目录内的 [README](./android-app/README.md)。
+
+---
+
 ## Development Environment Setup
 
 ### Prerequisites
