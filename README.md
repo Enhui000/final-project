@@ -37,12 +37,29 @@ For detailed project information, please refer to our [Project Proposal](./CS407
    docker-compose ps
    ```
 
-3. **Start the Spring Boot application**
+3. **Configure database/cache credentials (optional)**
+   
+   When deploying to AWS (for example, using RDS for MySQL and ElastiCache for Redis),
+   set the following environment variables before starting the application so it can
+   connect to your managed services:
+
+   | Variable | Purpose | Default |
+   | --- | --- | --- |
+   | `SPRING_DATASOURCE_URL` | JDBC connection string for MySQL | `jdbc:mysql://localhost:3306/cs407_final_project?...` |
+   | `SPRING_DATASOURCE_USERNAME` | MySQL username | `root` |
+   | `SPRING_DATASOURCE_PASSWORD` | MySQL password | _(empty)_ |
+   | `SPRING_REDIS_HOST` | Redis host address | `localhost` |
+   | `SPRING_REDIS_PORT` | Redis port | `6379` |
+   | `SPRING_REDIS_PASSWORD` | Redis password | _(empty)_ |
+   | `SPRING_REDIS_DATABASE` | Redis logical database index | `0` |
+   | `SPRING_REDIS_TIMEOUT` | Redis connection timeout | `5000ms` |
+
+4. **Start the Spring Boot application**
    ```bash
    mvn spring-boot:run
    ```
 
-4. **Verify everything is working**
+5. **Verify everything is working**
    - Spring Boot Application: http://localhost:8080
    - API Documentation: http://localhost:8080/swagger-ui.html
    - GUI API Testing: http://localhost:8080/client/debug.html
